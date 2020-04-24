@@ -8,9 +8,9 @@ class Scraper
   html = open("https://www.ashp.org/Drug-Shortages/Current-Shortages/Drug-Shortages-List?page=CurrentShortages")
   doc = Nokogiri::HTML(html)
     doc.css(".drug-shortage-container").each do |page|
-      page.text
+      profile = page.css(".table table-striped main_table dataTable no-footer").text
     binding.pry
     end
   end
-  
+ 
 end
