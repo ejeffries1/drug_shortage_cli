@@ -7,7 +7,10 @@ class Scraper
   def self.current_drugs
   html = open("https://www.ashp.org/Drug-Shortages/Current-Shortages/Drug-Shortages-List?page=CurrentShortages")
   doc = Nokogiri::HTML(html)
-  binding.pry
+    doc.css(".drug-shortage-container").each do |page|
+      page.text
+    binding.pry
+    end
   end
   
 end
