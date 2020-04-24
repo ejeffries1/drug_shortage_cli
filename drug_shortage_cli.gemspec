@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Evan Jeffries'"]
   spec.email         = ["'ejeffries14@gmail.com'"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{"This gem is a CLI application that shows the user the Drug shortages in different categories depending on the user's selection."}
+  spec.description   = %q{}
   spec.homepage      = "https://github.com/ejeffries1/drug_shortage_cli"
   spec.license       = "MIT"
 
@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
 
     spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = "https://github.com/ejeffries1/drug_shortage_cli"
-    spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+    #spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
