@@ -15,7 +15,8 @@ class Scraper
   html = open("https://www.ashp.org/Drug-Shortages/Current-Shortages/Drug-Shortages-List?page=CurrentShortages")
   doc = Nokogiri::HTML(html)
     doc.css(".drug-shortage-container").each do |page|
-      @name = page.css("tbody a").text
+      drug = page.css("tbody a").text
+      @name = drug.to_s
     binding.pry
     end
   end
