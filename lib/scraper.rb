@@ -17,7 +17,7 @@ class Scraper
     doc.css(".drug-shortage-container").each do |page|
       drug = page.css("tbody a").text
       @name = drug.to_s
-    binding.pry
+    #binding.pry
     end
   end
  
