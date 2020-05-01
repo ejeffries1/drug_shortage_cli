@@ -1,4 +1,4 @@
-#require_relative "../lib/scraper.rb"
+require_relative "../lib/scraper.rb"
 #require_relative "../lib/environment.rb"
 require "nokogiri"
 
@@ -6,6 +6,7 @@ class CommandLineInterface
   
   def run
     welcome
+    choices
   end
   
   
@@ -16,5 +17,11 @@ class CommandLineInterface
     puts "2 - Discontinued Drugs"
     puts "3 - Resolved Drug Shortages"
   end
-  #Scraper.current_drugs
+  
+  def choices
+   input = gets.chomp!
+   if input = "1"
+    Scraper.current_drugs
+    end
+  end
 end
