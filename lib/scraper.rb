@@ -3,20 +3,26 @@ require 'open-uri'
 require 'pry'
 
 class Scraper
-  attr_accessor :name, :drug
+  attr_accessor :drug
   
-  @@all = {}
+  @@all = []
   #def initialize
-    #@name = name
+    #@drug = drug
    # @@all[:name] = @name
+   #@@all << self
   #end
   
   def self.current_drugs
   html = open("https://www.ashp.org/Drug-Shortages/Current-Shortages/Drug-Shortages-List?page=CurrentShortages")
   doc = Nokogiri::HTML(html)
-    doc.css(".drug-shortage-container").select do |page|
+    doc.css(".drug-shortage-container").each do |page|
       name = page.css("tr")
-    binding.pry
+      @@all << name
+      @@all.select do |i|
+       @drug = i.text.split("\t")
+      end
+      @drug
+      binding.pry
     end
   end
  
