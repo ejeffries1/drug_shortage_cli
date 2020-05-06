@@ -20,6 +20,7 @@ class Scraper
       @@all << name
       @@all.select do |i|
        @drug = i.text.split("\t")
+       #update to split the array to just parse drugs
       end
       @drug
       binding.pry
