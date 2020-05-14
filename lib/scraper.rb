@@ -13,18 +13,27 @@ class Scraper
   #end
   
   def self.current_drugs
+    drugs = []
   html = open("https://www.ashp.org/Drug-Shortages/Current-Shortages/Drug-Shortages-List?page=CurrentShortages")
   doc = Nokogiri::HTML(html)
     doc.css(".drug-shortage-container").each do |page|
-      name = page.css("tr")
-      @@all << name
-      @@all.select do |i|
-       @drug = i.text.split("\t")
-       #update to split the array to just parse drugs
+      new_page = page.css("tr")
+      drugs << new_page
+      drugs.select do |i|
+       new_drugs = i.text.split("\t")
+       
+       new_drugs.each do |element|
+         new_drugs.delete(element) if element == """"
+        end
+        new_drugs.each do |list|
+          puts list.strip
+        end
       end
-      @drug
-      binding.pry
     end
+  end
+  
+  def discontinued_drug
+    
   end
  
 end
