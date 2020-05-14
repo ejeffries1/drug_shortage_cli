@@ -32,8 +32,9 @@ class Scraper
     end
   end
   
-  def discontinued_drug
-    
+  def self.discontinued_drug
+    html = open("https://www.ashp.org/Drug-Shortages/Current-Shortages/Drug-Shortages-List?page=DrugsNoLongerAvailable")
+    doc = Nokogiri::HTML(html)
   end
  
 end
