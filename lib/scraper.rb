@@ -35,7 +35,8 @@ class Scraper
   def self.discontinued_drugs
     html = open("https://www.ashp.org/Drug-Shortages/Current-Shortages/Drug-Shortages-List?page=DrugsNoLongerAvailable")
     doc = Nokogiri::HTML(html)
-    doc.css
+    doc.css(".drug-shortage-container").each do |page|
+    end
   end
  
 end
