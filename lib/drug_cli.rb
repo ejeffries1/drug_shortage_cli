@@ -23,5 +23,9 @@ class CommandLineInterface
    if input = "1"
     Scraper.current_drugs
     end
+    
+   if input = "2"
+     Scraper.discontinued_drug
+   end
   end
 end
