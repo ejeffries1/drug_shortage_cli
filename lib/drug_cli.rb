@@ -26,6 +26,8 @@ class CommandLineInterface
     Scraper.discontinued_drugs
   elsif input = "3"
     Scraper.resolved_drugs
+  elsif input = "exit"
+  
    end
   end
 end
