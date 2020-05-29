@@ -6,11 +6,11 @@ class Scraper
   attr_accessor :drug
   
   @@all = []
-  #def initialize
-    #@drug = drug
-   # @@all[:name] = @name
-   #@@all << self
-  #end
+  def initialize
+    @drug = drug
+    @@all[:name] = @name
+   @@all << self
+  end
   
   def self.current_drugs
     curr_drugs = []
@@ -68,6 +68,4 @@ class Scraper
         end
       end
     end
-  end
- 
 end
