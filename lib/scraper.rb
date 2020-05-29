@@ -40,6 +40,12 @@ class Scraper
       dis_drugs << new_page
       dis_drugs.select do |i|
         new_drugs = i.text.split("\t")
+        new_drugs.each do |element|
+          new_drugs.delete(element) if element == """"
+        end
+        new_drugs.each do |list|
+          puts list.strip
+        end
       end
     end
   end

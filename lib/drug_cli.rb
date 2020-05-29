@@ -25,7 +25,7 @@ class CommandLineInterface
     end
     
    if input = "2"
-     Scraper.discontinued_drug
+     Scraper.discontinued_drugs
    end
   end
 end
