@@ -51,7 +51,22 @@ class Scraper
   end
   
   def self.resolved_drugs
-    
+    res_drugs = []
+    html = open("https://www.ashp.org/Drug-Shortages/Current-Shortages/Drug-Shortages-List?page=ResolvedShortages")
+    doc = Nokogiri::HTML(html)
+    doc.css(".drug-shortage-container") do |page|
+      new_page = page.css("tr")
+      res_drugs << new_page
+      res_drugs.select do |i|
+        new_drugs = i.text.split("\t")
+        new_drugs.each do |element|
+          new_drugs.delete(element) if element == """"
+          end
+          new_drugs.each do |i|
+          end
+        end
+      end
+    end
   end
  
 end
