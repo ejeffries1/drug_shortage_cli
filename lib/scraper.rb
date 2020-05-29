@@ -49,5 +49,9 @@ class Scraper
       end
     end
   end
+  
+  def self.resolved_drugs
+    
+  end
  
 end

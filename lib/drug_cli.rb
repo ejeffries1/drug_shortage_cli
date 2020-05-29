@@ -22,10 +22,10 @@ class CommandLineInterface
    input = gets.chomp!
    if input = "1"
     Scraper.current_drugs
-    end
-    
-   if input = "2"
-     Scraper.discontinued_drugs
+  elsif input = "2"
+    Scraper.discontinued_drugs
+  elsif input = "3"
+    Scraper.resolved_drugs
    end
   end
 end
