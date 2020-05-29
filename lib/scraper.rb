@@ -62,7 +62,8 @@ class Scraper
         new_drugs.each do |element|
           new_drugs.delete(element) if element == """"
           end
-          new_drugs.each do |i|
+          new_drugs.each do |list|
+            puts list.strip
           end
         end
       end
